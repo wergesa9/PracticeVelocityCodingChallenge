@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model List<string>
+<script>
+    $(function ()
+    {
+        $(".printbutton").on("click", function ()
+        {
+            $.post('@Url.Action("GetCountView", "Default")',
+                { "evt": $(this).attr("value") },
+                function (data)
+                {
+                    $("#list_view").html(data);
+                },
+                "html");
+        });
+    });
+</script>
+<div id="appsettingbuttons">
+    @foreach(string button in Model)
+    {
+        <button type="button" id="@button" name="@button" value="@button" class="printbutton">@button</button>
+    }
+</div>
+<div id="list_view" name="list_view">
+
+</div>

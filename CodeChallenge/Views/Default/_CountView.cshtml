@@ -1,0 +1,53 @@
+﻿@model string
+@{
+
+}
+
+<ul>
+    @if (Model.Equals("Register"))
+    {
+        for (int i = 1; i < 101; i++)
+        {
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                <li>Register Patient</li>
+            }
+            else if (i % 3 == 0)
+            {
+                <li>Register</li>
+            }
+            else if (i % 5 == 0)
+            {
+                <li>Patient</li>
+            }
+            else
+            {
+                <li>@i</li>
+            }
+
+        }
+    }
+    @if (Model.Equals("Diagnose"))
+    {
+        for (int i = 1; i < 101; i++)
+        {
+            if (i % 2 == 0 && i % 7 == 0)
+            {
+                <li>Diagnost Patient</li>
+            }
+            else if (i % 2 == 0)
+            {
+                <li>Diagnose</li>
+            }
+            else if (i % 7 == 0)
+            {
+                <li>Patient</li>
+            }
+            else
+            {
+                <li>@i</li>
+            }
+
+        }
+    }
+</ul>
